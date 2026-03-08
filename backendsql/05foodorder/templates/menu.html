@@ -1,0 +1,15 @@
+<h2>Menu</h2>
+
+{% for id,item in menu.items() %}
+
+<p>
+
+{{item.name}} - ₹{{item.price}}
+
+<a href="/add/{{id}}">Add to Cart</a>
+
+</p>
+
+{% endfor %}
+
+<a href="/cart">View Cart</a>

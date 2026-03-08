@@ -1,0 +1,11 @@
+<h2>Products</h2>
+
+{% for p in products %}
+
+<div>
+<h3>{{p.name}}</h3>
+<p>Price: {{p.price}}</p>
+<a href="/checkout/">Buy</a>
+</div>
+
+{% endfor %}

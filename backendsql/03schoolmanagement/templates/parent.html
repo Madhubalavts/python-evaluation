@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Parent Login</h2>
+
+<form method="POST">
+
+Student ID:
+<input type="number" name="student_id">
+
+Password:
+<input type="password" name="password">
+
+<button type="submit">Login</button>
+
+</form>
+
+{% if result %}
+
+<h3>Student Info</h3>
+
+<p>Name: {{result.student[1]}}</p>
+<p>Course: {{result.student[2]}}</p>
+
+<h3>Attendance</h3>
+
+{% for a in result.attendance %}
+<p>Days Present: {{a[1]}}</p>
+{% endfor %}
+
+<h3>Marks</h3>
+
+{% for m in result.marks %}
+<p>{{m[1]}} : {{m[2]}}</p>
+{% endfor %}
+
+{% endif %}
+
+</body>
+</html>

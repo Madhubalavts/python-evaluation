@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Employee Attendance</h2>
+
+<form method="POST">
+
+Employee:
+
+<select name="emp_id">
+
+{% for e in employees %}
+
+<option value="{{e[0]}}">
+{{e[1]}}
+</option>
+
+{% endfor %}
+
+</select>
+
+Days Worked:
+
+<input type="number" name="days">
+
+<button type="submit">Save</button>
+
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>

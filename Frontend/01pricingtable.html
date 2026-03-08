@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Table</title>
+<style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+.card{
+  background:#f4f6f9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.pricing-container{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.pricing-card{
+  background:#fff;
+  padding:30px;
+  width:260px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s ease;
+  border:1px solid #eee;
+}
+
+.pricing-card:hover{
+  transform:scale(1.07);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.pricing-card h2{
+  margin-bottom:10px;
+}
+
+.pricing-card h3{
+  font-size:28px;
+  margin-bottom:20px;
+  color:#333;
+}
+
+.pricing-card h3 span{
+  font-size:14px;
+  color:#777;
+}
+
+.pricing-card ul{
+  list-style:none;
+  margin-bottom:20px;
+}
+
+.pricing-card ul li{
+  padding:8px 0;
+  color:#555;
+}
+
+.pricing-card button{
+  padding:10px 20px;
+  border:none;
+  background:#4CAF50;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.pricing-card button:hover{
+  background:#45a049;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .pricing-container{
+    flex-direction:column;
+    align-items:center;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 style="text-align:center; margin:20px 0;">Our Pricing Plans</h1>  
+</header>    
+<div class="card">
+<div class="pricing-container">
+
+  <div class="pricing-card">
+    <h2>Basic</h2>
+    <h3>$9<span>/month</span></h3>
+    <ul>
+      <li>5 Projects</li>
+      <li>10GB Storage</li>
+      <li>Email Support</li>
+    </ul>
+    <button>Choose Plan</button>
+  </div>
+
+  <div class="pricing-card">
+    <h2>Standard</h2>
+    <h3>$19<span>/month</span></h3>
+    <ul>
+      <li>15 Projects</li>
+      <li>50GB Storage</li>
+      <li>Priority Support</li>
+    </ul>
+    <button>Choose Plan</button>
+  </div>
+
+  <div class="pricing-card">
+    <h2>Premium</h2>
+    <h3>$39<span>/month</span></h3>
+    <ul>
+      <li>Unlimited Projects</li>
+      <li>150GB Storage</li>
+      <li>24/7 Support</li>
+    </ul>
+    <button>Choose Plan</button>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

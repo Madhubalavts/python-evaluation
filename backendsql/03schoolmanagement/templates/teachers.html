@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add Teacher</h2>
+
+<form method="POST">
+
+Name:
+<input type="text" name="name">
+
+Subject:
+<input type="text" name="subject">
+
+<button type="submit">Add Teacher</button>
+
+</form>
+
+<h3>Teacher List</h3>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Subject</th>
+</tr>
+
+{% for t in data %}
+
+<tr>
+<td>{{t[0]}}</td>
+<td>{{t[1]}}</td>
+<td>{{t[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="/">Back</a>
+
+</body>
+</html>

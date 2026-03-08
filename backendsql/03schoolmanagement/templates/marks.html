@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add Marks</h2>
+
+<form method="POST">
+
+Student:
+
+<select name="student_id">
+
+{% for s in students %}
+<option value="{{s[0]}}">
+{{s[1]}}
+</option>
+{% endfor %}
+
+</select>
+
+Subject:
+<input type="text" name="subject">
+
+Marks:
+<input type="number" name="marks">
+
+<button type="submit">Save</button>
+
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>

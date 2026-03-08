@@ -1,0 +1,105 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+
+        <h3 class="fw-bold mb-4">
+            🛒 Your Shopping Cart
+        </h3>
+
+        {% if cart_items %}
+
+        <div class="table-responsive">
+            <table class="table align-middle text-center">
+
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-start">Product</th>
+                        <th>Price</th>
+                        <th style="width: 180px;">Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+
+                        <!-- Product Name -->
+                        <td class="text-start fw-medium">
+                            {{ item.product.name }}
+                        </td>
+
+                        <!-- Price -->
+                        <td>
+                            ₹{{ item.product.price }}
+                        </td>
+
+                        <!-- Quantity Controls -->
+                        <td>
+                            <div class="d-flex justify-content-center align-items-center">
+
+                                <!-- Decrease -->
+                                <a href="{% url 'decrease_quantity' item.id %}"
+                                   class="btn btn-sm btn-outline-secondary rounded-circle"
+                                   style="width:32px; height:32px;">
+                                    -
+                                </a>
+
+                                <span class="mx-3 fw-bold fs-6">
+                                    {{ item.quantity }}
+                                </span>
+
+                                <!-- Increase -->
+                                <a href="{% url 'increase_quantity' item.id %}"
+                                   class="btn btn-sm btn-outline-secondary rounded-circle"
+                                   style="width:32px; height:32px;">
+                                    +
+                                </a>
+
+                            </div>
+                        </td>
+
+                        <!-- Subtotal -->
+                        <td class="fw-semibold">
+                            ₹{{ item.subtotal }}
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- Grand Total Section -->
+        <div class="text-end mt-4">
+            <h4 class="fw-bold">
+                Grand Total: ₹{{ total_price }}
+            </h4>
+        </div>
+
+        {% else %}
+
+        <!-- Empty Cart -->
+        <div class="alert alert-warning text-center">
+            Your cart is empty.
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+{% if cart_items %}
+<div class="text-end mt-4">
+    <h4>Total: ₹{{ total_price }}</h4>
+    <a href="{% url 'checkout' %}" class="btn btn-success">
+        Proceed to Checkout
+    </a>
+</div>
+{% endif %}
+
+{% endblock %}

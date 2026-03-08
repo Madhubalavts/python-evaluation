@@ -1,0 +1,11 @@
+===== GST INVOICE =====
+Date: 2026-03-08
+
+Customer: Madhu
+Product: mouse
+Price: 450.0
+Quantity: 5
+
+Subtotal: 2250.0
+GST (18%): 405.0
+Total: 2655.0

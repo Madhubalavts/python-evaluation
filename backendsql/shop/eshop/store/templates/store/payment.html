@@ -1,0 +1,20 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+    "key": "{{ razorpay_key }}",
+    "amount": "{{ payment.amount }}",
+    "currency": "INR",
+    "name": "Eshop",
+    "description": "Order Payment",
+    "order_id": "{{ payment.id }}",
+
+    "handler": function (response){
+        window.location.href = "/payment-success/?order_id={{ order.id }}"
+            + "&razorpay_payment_id=" + response.razorpay_payment_id;
+    }
+};
+
+var rzp1 = new Razorpay(options);
+rzp1.open();
+</script>

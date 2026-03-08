@@ -1,0 +1,30 @@
+<h2>Checkout</h2>
+
+<p>Total: ₹{{total}}</p>
+
+<button id="pay-btn">Pay Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+var options = {
+ "key": "{{payment.key}}",
+ "amount": "{{payment.amount}}",
+ "currency": "INR",
+ "name": "My Store",
+ "order_id": "{{payment.id}}",
+
+ handler: function (response){
+   alert("Payment Successful");
+ }
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById('pay-btn').onclick = function(e){
+ rzp.open();
+ e.preventDefault();
+}
+
+</script>

@@ -1,0 +1,13 @@
+<h2>Admin Orders</h2>
+
+{% for order in orders %}
+
+<p>New Order</p>
+
+{% for item in order %}
+<p>{{item.name}}</p>
+{% endfor %}
+
+<hr>
+
+{% endfor %}

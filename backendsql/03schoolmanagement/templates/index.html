@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add Student</h2>
+
+<form method="POST">
+
+Name:
+<input type="text" name="name">
+
+Course:
+<input type="text" name="course">
+
+Parent Password:
+<input type="password" name="password">
+
+<button type="submit">Add</button>
+
+</form>
+
+<h3>Students</h3>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Course</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+<td>{{s[0]}}</td>
+<td>{{s[1]}}</td>
+<td>{{s[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/attendance">Attendance</a>
+<br>
+<a href="/marks">Marks</a>
+<br>
+<a href="/teachers">Manage Teachers</a>
+<br>
+<a href="/parent">Parent Login</a>
+
+</body>
+</html>

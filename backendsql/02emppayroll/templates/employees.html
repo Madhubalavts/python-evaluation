@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add Employee</h2>
+
+<form method="POST">
+
+Name:
+<input type="text" name="name">
+
+Salary:
+<input type="number" name="salary">
+
+<button type="submit">Add</button>
+
+</form>
+
+<h3>Employees</h3>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+
+{% for e in data %}
+
+<tr>
+<td>{{e[0]}}</td>
+<td>{{e[1]}}</td>
+<td>{{e[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="/attendance">Add Attendance</a>
+<br><br>
+
+<a href="/excel">Export Excel</a>
+<br>
+
+<a href="/pdf">Export PDF</a>
+
+</body>
+</html>
